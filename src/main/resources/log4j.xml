@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="consoleApp" class="org.apache.log4j.ConsoleAppender">
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n"/> 
+       </layout> 
+    </appender>
+    <appender name="fileApp" class="org.apache.log4j.FileAppender">
+       <param name="File" value="e:\\logs\\applog.log" />
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n"/> 
+       </layout> 
+    </appender>
+    <root>
+    <!-- As per Ticket 515427 changes done  -->
+        <priority value="DEBUG"/> 
+        <appender-ref ref="consoleApp" />
+        <appender-ref ref="fileApp" />
+    </root>
+</log4j:configuration> 
+   
